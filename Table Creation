@@ -1,0 +1,31 @@
+# create table based on data stucture & data sets 
+create table Categories (CategoryID number(6), CategoryName varchar2(30), Description varchar2(100), Picture varchar2(30));
+
+create table Suppliers (SupplierID number(6), CompanyName varchar2(100), ContactName varchar2(30), 
+ContactTitle  varchar2(30), Address varchar2(100), city varchar(30), Region varchar2(30), Postalcode varchar2(30),
+Country varchar2(30), Phone varchar2(12), Fax varchar2(100), HomePage varchar2(100));
+
+create table Products (ProductID number(6), ProductName varchar2(100), SupplierID number(6), CategoryID number(6),
+QuantityPerUnit varchar2(30), UnitPrice number(20,2), UnitsInStock number(6), UnitsOnOrder number(6), ReorderLevel number(6),
+Discontinued number(6));
+
+create table OrderDetails (OrderID number(6), ProductID number(6), UnitPrice number(20,2), Quantity number(6), Discount varchar2(100));
+
+create table Orders (OrderID number(6), CustomerID varchar2(30), EmployeeID number(6), OrderDate date, RequiredDate date, ShippedDate date,
+ShipVia number(6), Freight number(6,2), ShipName varchar2(100), ShipAddress varchar2(100), ShipCity varchar2(30), ShipRegion varchar2(30), 
+ShipPostalCode varchar2(30), ShipCountry varchar2(30));
+
+create table Customers (CustomerID varchar2(30), CompanyName varchar2(60), ContactName varchar2(30), ContactTitle varchar2(30), Address varchar2(100),
+City varchar2(30), Region varchar2(30), PostalCode varchar2(30), Country varchar2(30), Phone varchar2(30), Fax varchar2(30));
+
+create table shippers (ShipperID number(30), CompanyName varchar2(30) , Phone number(11));
+
+create table region (RegionID number(6) , RegionDescription varchar2(30));
+
+create table Territories (TerritoryID varchar2(100), TerritoryDescription varchar2(100), RegionID number(6));
+
+create table  EmployeeTerritories (EmployeeID number(6), TerritoryID number(10));
+
+create table Employees1 (EmployeeID number(6), LastName varchar2(30), FirstName varchar2(30), Title varchar2(30), TitleOfCourtesy varchar2(30),
+BirthDate date, HireDate date, Address varchar2(30), City varchar2(30), Region varchar2(30), PostalCode varchar2(30), Country varchar2(30),
+HomePhone varchar2(30), Extension number(6), Photo varchar2(30), Notes varchar2(4000), ReportsTo varchar2(30), PhotoPath varchar2(30));
